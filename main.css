@@ -1,0 +1,183 @@
+html {
+  background-color: #ffafaf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  border-color: white;
+  border: 1px solid white;
+  padding: 0px 100px 20px 100px;
+  background-color: white;
+  animation: pageLoadAnimation 0.8s ease forwards;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  font-size: 36px;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+  animation-delay: 0.8s;
+}
+
+.completed-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: 14px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 1s;
+}
+
+input {
+  font-size: 20px;
+  border: 1px solid black;
+  font-weight: 500;
+  width: 210px;
+  height: 24px;
+  border-radius: 3px;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 1.2s;
+}
+
+input:focus {
+  border: 1.5px solid rgb(0, 0, 255);
+  outline: none;
+  background-color: white;
+}
+
+#addTaskButton {
+  font-size: 20px;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 1.2s;
+}
+
+#taskList {
+  padding-inline-start: 0px;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  font-size: 24px;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: color 2s ease;
+}
+
+li.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+li.new {
+  animation: fadeInNewListItem 0.5s ease forwards;
+}
+
+span#completedCount {
+  margin-right: 2px;
+}
+
+.remove-button {
+  background-image: url('wastebasket.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 12px;
+  height: 12px;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  transform: translate(10px, 10px);
+  opacity: 50%;
+}
+
+.remove-button:hover {
+  opacity: 0.8;
+}
+
+#error-message.error-active {
+  color: rgb(233, 14, 14);
+  display: flex;
+  justify-content: center;
+  margin-top: 3px;
+  font-style: italic;
+  font-weight: bold;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  opacity: 1;
+  animation: errorBlink 1.2s 1;
+}
+
+@keyframes pageLoadAnimation {
+  0% {
+    transform: translateY(-100px);
+    color: transparent;
+  }
+
+  50% {
+    transform: translateY(100px);
+    color: transparent;
+  }
+
+  100% {
+    transform: translateY(0);
+    color: black;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes errorBlink {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes fadeInNewListItem {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
