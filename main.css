@@ -13,7 +13,7 @@ body {
   animation: pageLoadAnimation 0.8s ease forwards;
 }
 
-h1 {
+.todo-title {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,7 +37,7 @@ h1 {
   animation-delay: 1s;
 }
 
-input {
+.task-input {
   font-size: 20px;
   border: 1px solid black;
   font-weight: 500;
@@ -49,24 +49,24 @@ input {
   animation-delay: 1.2s;
 }
 
-input:focus {
+.task-input:focus {
   border: 1.5px solid rgb(0, 0, 255);
   outline: none;
   background-color: white;
 }
 
-#addTaskButton {
+.add-task-button {
   font-size: 20px;
   opacity: 0;
   animation: fadeIn 1s ease forwards;
   animation-delay: 1.2s;
 }
 
-#taskList {
+.task-list {
   padding-inline-start: 0px;
 }
 
-li {
+.task-item {
   display: flex;
   justify-content: center;
   list-style-type: none;
@@ -76,16 +76,16 @@ li {
   transition: color 2s ease;
 }
 
-li.completed {
+.task-item.completed {
   text-decoration: line-through;
   color: gray;
 }
 
-li.new {
+.new {
   animation: fadeInNewListItem 0.5s ease forwards;
 }
 
-span#completedCount {
+.span-completed-count {
   margin-right: 2px;
 }
 
@@ -106,7 +106,7 @@ span#completedCount {
   opacity: 0.8;
 }
 
-#error-message.error-active {
+.error-message.error-active {
   color: rgb(233, 14, 14);
   display: flex;
   justify-content: center;
@@ -146,7 +146,6 @@ span#completedCount {
   }
 }
 
-
 @keyframes errorBlink {
   0% {
     opacity: 1;
@@ -168,7 +167,6 @@ span#completedCount {
     opacity: 1;
   }
 }
-
 
 @keyframes fadeInNewListItem {
   0% {

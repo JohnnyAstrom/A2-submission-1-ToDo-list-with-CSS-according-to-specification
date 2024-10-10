@@ -10,21 +10,19 @@
 </head>
 
 <body>
-  <h1>My ToDo</h1>
+  <h1 class="todo-title">My ToDo</h1>
 
-  <p class="completed-count"><span id="completedCount"></span>completed</p>
+  <p class="completed-count"><span class="span-completed-count"></span> completed</p>
 
-  <p id="noTaskInput"></p>
+  <p class="no-task-input"></p>
 
-  <div class="container1">
-    <input type="text" id="taskInput">
-    <button id="addTaskButton">OK</button>
-  </div>
+  <input type="text" class="task-input">
+  <button class="add-task-button">OK</button>
 
-  <p id="error-message"></p>
+  <p class="error-message"></p>
 
-  <ul id="taskList"></ul>
-  <ul id="taskCompletedList"></ul>
+  <ul class="task-list"></ul>
+  <ul class="task-completed-list"></ul>
 
   <script src='main.js'></script>
 </body>

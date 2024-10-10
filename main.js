@@ -2,11 +2,11 @@
 let tasks = [];
 
 // Select HTML elements
-const taskInput = document.querySelector('#taskInput');
-const addTaskButton = document.querySelector('#addTaskButton');
-const taskList = document.querySelector('#taskList');
-const completedCount = document.querySelector('#completedCount');
-const errorMessage = document.querySelector('#error-message');
+const taskInput = document.querySelector('.task-input');
+const addTaskButton = document.querySelector('.add-task-button');
+const taskList = document.querySelector('.task-list');
+const completedCount = document.querySelector('.span-completed-count');
+const errorMessage = document.querySelector('.error-message');
 
 // Function to add a new task
 function addTask() {
@@ -19,7 +19,10 @@ function addTask() {
   errorMessage.textContent = '';
   errorMessage.classList.remove('error-active');
 
-  const newTask = { text: taskText, completed: false };
+  const newTask = {
+    text: taskText,
+    completed: false
+  };
   tasks.push(newTask);
   taskInput.value = '';
 
@@ -33,6 +36,7 @@ function addTask() {
 // Function to create and return a new list item
 function createListItem(task, index) {
   const li = document.createElement('li');
+  li.classList.add('task-item');
   li.textContent = task.text;
 
   // Check if the task is completed and add the appropriate class
